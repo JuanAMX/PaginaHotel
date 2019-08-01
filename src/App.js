@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
+import Header from "./header"
+
 
 class  App extends Component  {
   constructor (props){
@@ -13,15 +15,9 @@ class  App extends Component  {
 
     fetch ('https://viaguate-10-backend-cliente.mybluemix.net/api/accommodation/ViewVacationrentals')
     .then(response => response.json())
-    .then(data => {
-      this.setState({
-        hotelsdata:data
-    })
-  })
+    .then(data =>   {   this.setState(  { hotelsdata:data }   )  }    )
 
-
-
-  }
+                     }
    render(){
      const hotelsdata =this.state.hotelsdata.map((hotel, i)=>{
 
@@ -34,7 +30,7 @@ class  App extends Component  {
 
 }}>
       <div className="price-container">
-        <h3>${hotel.basePrice}/Night</h3>
+       <h3>${hotel.basePrice}/Night  <span className="heart">&#10084;&#65039; </span> </h3>
         </div>
      </div>
 
@@ -62,17 +58,7 @@ class  App extends Component  {
      )
      return(
      <div className="Main">
-       <div className="App-header">
-       <button className="first-button">Logo</button>
-         <button>Accommodation </button>
-         <button>Transportation </button>
-         <button>Things To Do </button>
-         <button>Tours Info </button>
-
-         <a className="first-a" href="#empty" >Get offers</a>
-         <a href="#empty">Social Media</a>
-         <a href="#empty">Contact</a>
-       </div>
+       <Header/>
 
        <div className="App-body">
          {hotelsdata}
