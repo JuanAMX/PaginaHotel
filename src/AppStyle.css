@@ -91,3 +91,8 @@ p{
   opacity: 0.6;
 
 }
+    @media only screen and (max-width : 767px) {
+
+        grid-template-columns: 1fr;
+    
+      }

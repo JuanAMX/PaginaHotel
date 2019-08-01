@@ -57,10 +57,10 @@ class  App extends Component  {
     }
      )
      return(
-       <div>
+       <div id="principal">
 
           <Header />
-          <div className="data-container">
+          <div>
          {hotelsdata}
          </div>
       </div>
