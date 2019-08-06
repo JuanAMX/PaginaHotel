@@ -19,17 +19,17 @@ class  App extends Component  {
 
                      }
    render(){
-     const hotelsdata =this.state.hotelsdata.map((hotel, i)=>{
+     const hotelsdata =this.state.hotelsdata.map((hotel, index)=>{
 
 
   return (
     
-    <div key="1"className="card">
-     <div className="card-header"  
+    <div key={hotel._id} className="card">
+     <div  className="card-header"  
       style={{ background: `url('${hotel.mainPicture.urlPhoto}')`
 
 }}>
-      <div id={hotel.i}className="price-container">
+      <div className="price-container">
        <h3>${hotel.basePrice}/Night  <span role="img" aria-label="heart" className="heart"> &#10084;&#65039; </span> </h3>
         </div>
      </div>
